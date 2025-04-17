@@ -11,7 +11,7 @@
 <!-- Optional: Add a screenshot or GIF of the site -->
 <!-- ![Vinyl Violence Screenshot](link/to/your/screenshot.png) -->
 
-**Live Demo:** [Link to your GitHub Pages site or other deployment - if applicable]
+**Live Demo:** (https://vinyl-violence.netlify.app/)
 
 ---
 
