@@ -1,5 +1,81 @@
 
 ---
+# Vinyl Violence
+
+![Static Site](https://img.shields.io/badge/Type-Static%20Site-brightgreen)
+![Tech](https://img.shields.io/badge/Tech-HTML%2FCSS%2FJS-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+**Aggressive Sounds and Raw Beats.** A minimalist, high-performance static blog built purely with HTML, CSS, and Vanilla JavaScript, focusing on music exploration (punk, techno, hip-hop, etc.).
+
+<!-- Optional: Add a screenshot or GIF of the site -->
+<!-- ![Vinyl Violence Screenshot](link/to/your/screenshot.png) -->
+
+**Live Demo:** [Link to your GitHub Pages site or other deployment - if applicable]
+
+---
+
+## Table of Contents
+
+*   [About The Project](#about-the-project)
+*   [Key Features](#key-features)
+*   [Technology Stack](#technology-stack)
+*   [Project Structure](#project-structure)
+*   [Getting Started](#getting-started)
+    *   [Prerequisites](#prerequisites)
+    *   [Installation](#installation)
+    *   [Running Locally](#running-locally)
+*   [Usage: Adding New Content](#usage-adding-new-content)
+    *   [Adding a New Article](#adding-a-new-article)
+    *   [Adding a New Static Page](#adding-a-new-static-page)
+*   [Customization](#customization)
+    *   [Theming (Colors, Fonts)](#theming-colors-fonts)
+    *   [Layout](#layout)
+    *   [Partials (Header, Footer, Sidebar)](#partials-header-footer-sidebar)
+*   [Potential Future Enhancements](#potential-future-enhancements)
+*   [Contributing](#contributing)
+*   [License](#license)
+*   [Contact](#contact)
+
+---
+
+## About The Project
+
+Vinyl Violence is a personal blog project designed to be:
+
+*   **Fast & Efficient:** Built as a static site with no backend or database dependencies.
+*   **Minimalist:** Uses only standard web technologies (HTML, CSS, Vanilla JS) with no external frameworks or libraries (except for fonts).
+*   **Maintainable:** Organized structure and dynamic loading of reusable partials (header, footer, sidebar) via JavaScript.
+*   **Responsive:** Adapts cleanly to various screen sizes (desktop, tablet, mobile).
+*   **Themeable:** Utilizes CSS Variables for easy customization of colors and fonts.
+*   **Content-Focused:** Explores music genres like punk rock, underground techno, classic hip-hop, and more with a raw, direct approach.
+
+The core challenge was to achieve dynamic-like features (reusable components, active navigation) using only client-side JavaScript without resorting to a full static site generator (SSG) or complex frameworks.
+
+---
+
+## Key Features
+
+*   **Pure HTML/CSS/JS:** No frameworks, no build steps required (besides running a local server for testing).
+*   **Dynamic Partials Loading:** JavaScript fetches and injects `header.html`, `footer.html`, and `sidebar_right.html` into placeholders on each page, handling relative paths correctly.
+*   **Responsive Design:** CSS Flexbox/Grid and Media Queries ensure adaptability across devices.
+*   **Active Navigation Highlighting:** JavaScript automatically adds an `.active` class to the current page's link in the main navigation.
+*   **CSS Variables for Theming:** Easily change the site's look and feel by modifying variables in `css/style.css`.
+*   **Basic SEO:** Semantic HTML structure and meta tags included.
+*   **Simple Content Management:** Add new articles/pages by creating new HTML files and manually updating index/archive pages.
+
+---
+
+## Technology Stack
+
+*   **HTML5:** Semantic markup for structure and content.
+*   **CSS3:** Styling, layout (Flexbox/Grid), responsiveness (Media Queries), and theming (CSS Variables).
+*   **Vanilla JavaScript (ES6+):** DOM manipulation, asynchronous fetching (`fetch` API) for partials, dynamic class handling, and minor utilities (e.g., copyright year).
+*   **Google Fonts:** For custom typography ('Bangers' and 'Lato').
+
+---
+
+## Project Structure
 
 ## Getting Started
 
