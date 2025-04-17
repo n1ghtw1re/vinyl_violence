@@ -1,0 +1,376 @@
+/* --- VARIABLES --- */
+:root {
+    --bg-color: #111111;
+    --text-color: #e0e0e0;
+    --primary-accent: #FF1177; /* Punk Pink / Magenta */
+    --secondary-accent: #555555; /* Dark Grey */
+    --link-hover-color: #ff66aa; /* Lighter Pink */
+    --header-font: 'Bangers', cursive;
+    --body-font: 'Lato', sans-serif;
+    --container-width: 1100px;
+    --border-style: 1px solid var(--secondary-accent);
+}
+
+/* --- RESET & BASE --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+/* --- TYPOGRAPHY & LINKS --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+    color: var(--primary-accent);
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+    letter-spacing: 1px; /* Add some spacing for Bangers */
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+code, pre {
+    background-color: #222;
+    border: var(--border-style);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ccc;
+}
+
+pre {
+    padding: 1em;
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-accent);
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    background-color: #1a1a1a;
+    font-style: italic;
+}
+
+/* --- LAYOUT --- */
+.container {
+    max-width: var(--container-width);
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 30px;
+}
+
+/* Apply 2-column layout on larger screens */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 3fr 1fr; /* Main content | Sidebar */
+    }
+}
+
+#main-content {
+    /* Styles specific to main content area if needed */
+    padding-bottom: 20px; /* Add some space before footer */
+}
+
+/* --- HEADER --- */
+header {
+    background-color: #000; /* Slightly darker header */
+    padding: 15px 0;
+    border-bottom: 2px solid var(--primary-accent);
+    margin-bottom: 30px;
+}
+
+.header-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: center; /* Center items */
+    text-align: center;
+}
+
+header .site-title a {
+    font-family: var(--header-font);
+    font-size: 2.8rem;
+    color: var(--primary-accent);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+header .site-title a:hover {
+    color: var(--link-hover-color);
+}
+
+
+header .tagline {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+    margin-top: -10px; /* Adjust spacing */
+    margin-bottom: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center; /* Center nav items */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    font-family: var(--header-font); /* Use header font for nav */
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active { /* Style for active link */
+    color: #000; /* Black text on active/hover */
+    background-color: var(--primary-accent);
+    text-decoration: none;
+}
+
+/* Adjust header layout on larger screens */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row; /* Side-by-side */
+        justify-content: space-between;
+        align-items: baseline;
+        text-align: left;
+    }
+    header .tagline {
+        margin-bottom: 0;
+    }
+    nav ul {
+        justify-content: flex-end; /* Align nav to the right */
+    }
+    nav ul li {
+        margin: 0 0 0 20px; /* Space only to the left */
+    }
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: #000;
+    color: var(--text-muted-color); 
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px; /* Space above footer */
+    font-size: 0.9rem;
+    border-top: 1px solid var(--secondary-accent);
+}
+
+
+.widget {
+    background-color: #1a1a1a; /* Slightly lighter background for widgets */
+    border: var(--border-style);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.widget h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed var(--primary-accent);
+    padding-bottom: 5px;
+    color: var(--primary-accent);
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.widget ul li a {
+    color: var(--text-color);
+}
+.widget ul li a:hover {
+    color: var(--primary-accent);
+}
+
+
+/* --- HOMEPAGE - ARTICLE PREVIEWS --- */
+.article-preview {
+    border: var(--border-style);
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #1a1a1a; /* Slightly lighter background */
+}
+
+.article-preview h2 {
+    margin-bottom: 5px; /* Less space below preview title */
+}
+
+.article-preview h2 a {
+    text-decoration: none;
+}
+.article-preview h2 a:hover {
+    text-decoration: underline;
+}
+
+.article-preview .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
+    margin-bottom: 10px;
+}
+
+.article-preview .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.article-preview .read-more:hover {
+    background-color: var(--primary-accent);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+/* --- FULL ARTICLE PAGE --- */
+.full-article h1 {
+    margin-bottom: 0.5em;
+}
+
+.full-article .meta {
+    font-size: 0.9rem;
+    color: var(--secondary-accent);
+    margin-bottom: 2em;
+}
+
+.full-article img { /* Basic responsive images */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em 0;
+}
+
+/* --- RESPONSIVENESS ADJUSTMENTS --- */
+
+@media (max-width: 767px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.9rem; }
+    .container {
+        padding: 0 15px;
+    }
+    #sidebar-placeholder {
+        margin-top: 20px; /* Add space when stacked */
+    }
+    nav ul li {
+        margin: 5px 5px; /* More spacing when wrapped */
+    }
+     header .site-title a {
+        font-size: 2.2rem;
+    }
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    .header-content {
+        padding: 0 10px;
+    }
+     header .site-title a {
+        font-size: 2rem;
+    }
+    nav ul li a {
+        font-size: 1rem;
+        padding: 3px 6px;
+    }
+}
+
+/* --- Add this section to your existing style.css --- */
+
+/* --- ARCHIVE PAGE LIST --- */
+.archive-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;  /* Remove default padding */
+    margin-top: 1.5em; /* Add some space above the list */
+}
+
+.archive-list .archive-item {
+    margin-bottom: 0.8em; /* Space between list items */
+    padding-bottom: 0.8em; /* Space below the item content */
+    border-bottom: 1px dashed var(--secondary-accent); /* Separator line */
+    font-size: 1.1rem; /* Slightly larger font for list items */
+}
+
+.archive-list .archive-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.archive-list .archive-date {
+    display: inline-block; /* Keep on same line */
+    color: var(--text-muted-color); /* Use secondary color for date */
+    margin-right: 0.75em; /* Space between date and title */
+    font-size: 0.9em; /* Make date slightly smaller */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for date */
+}
+
+:root {
+    /* ... other variables ... */
+    --secondary-accent: #555555; /* Keep this for borders etc. or adjust slightly if needed */
+    --text-muted-color: #999999;  /* NEW: For less important text */
+    /* ... other variables ... */
+}
